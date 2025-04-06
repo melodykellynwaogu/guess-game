@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #4567b7, #6495ed);
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+            width: 90%; /* Default width for smaller screens */
+            max-width: 300px; /* Limit the width on larger screens */
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            body {
+                padding: 40px;
+            }
+            input, button {
+                width: 50%; /* Adjust width for medium and larger screens */
+            }
+        }
+
+        @media (min-width: 1024px) {
+            input, button {
+                width: 30%; /* Further adjust width for larger screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Guess the Number</h1>
+    <p>{{ message }}</p>
+    <form method="POST">
+        <label for="guess">Enter your guess (1-10):</label>
+        <input type="number" id="guess" name="guess" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
